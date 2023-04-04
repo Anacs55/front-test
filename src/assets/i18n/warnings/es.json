@@ -1,0 +1,9 @@
+{
+    "error": {
+        "invitationExpired": " Tu invitación para unirse a un equipo ha expirado o no existe",
+        "404": "La página que buscas no se ha encontrado"
+    },
+    "loading":{
+        "sendInvitation" : "Estamos enviado tu invitación"
+    }
+}

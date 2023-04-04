@@ -1,0 +1,124 @@
+{
+    "colorSelect": {
+        "addColors": "Añadir colores",
+        "deleteColor": "Borrar un color",
+        "addColor": "Añadir color"
+    },
+    "column": {
+        "create": "Crear nueva Columna",
+        "config": {
+            "showTimes": "Mostrar tiempos",
+            "changeColor": "Cambiar color"
+        }
+    },
+    "dashView": {
+        "projects": "Proyectos",
+        "newProject": "Nuevo Proyecto",
+        "importTrello": "Importar de Trello"
+    },
+    "modals": {
+        "assignToTeam": {
+            "assignToTeam": "Asignar al Team",
+            "searchTeam": "Buscar un Team"
+        },
+        "createProject": {
+            "newProject": "Nuevo proyecto",
+            "projectName": "Nombre del proyecto",
+            "dateRange": "Rango de fechas",
+            "styleProject": "Dale estilo a tu proyectos",
+            "label": "Etiqueta",
+            "addImage": "Añadir imagen",
+            "image": "Imagen",
+            "createProject": "Crear Proyecto",
+            "colorSelect": "Seleccionar color",
+            "othersColors": "Personalizar tu color",
+            "updateProject": "Proyecto actualizado",
+            "createSuccsess": "Proyecto creado exitosamente",
+            "createError": "Error creando el proyecto",
+            "importSuccess": "Proyecto importado exitosamente"
+        },
+        "usersItem": {
+            "AssignToUser": "Asignar al usuario",
+            "addUsers": "Añadir Usuarios",
+            "updateUsers": "Actualizar Usuarios"
+        },
+        "share": {
+            "shareItem": "Compartir Tarea",
+            "shareSubItem": "Compartir Subtarea",
+            "shareproject": "Compartir Proyecto"
+        }
+    },
+    "time": {
+        "delayed": "retraso de",
+        "days": "Días",
+        "daysLeft": "días para completar la tarea",
+        "times": "Tiempo global",
+        "itemTimes": "Tiempo de la tarea",
+        "total": "Total",
+        "estimated": "Estimado",
+        "spent": "Empleado",
+        "remaining": "Restante"
+    },
+    "task": {
+        "task": "Tarea",
+        "create": "Añadir Task",
+        "assigned": "Bees Asignados",
+        "assign": "Assign",
+        "complete": "Marca para completar",
+        "date": "Fecha",
+        "activity": "Actividad",
+        "message": "Escribir un mensaje",
+        "attachment": "Archivos",
+        "saved": "actualizada",
+        "titleUpdated": "Titulo de la tarea actualizado"
+    },
+    "subTask": {
+        "create": "Crear Subtarea",
+        "subtasks": "Subtarea"
+    },
+    "priority": {
+        "updated": "Prioridad de la tarea actualizada",
+        "unset": "Sin prioridad",
+        "low": "Baja",
+        "medium": "Media",
+        "high": "Alta"
+    },
+    "common": {
+        "rename": "Renombrar",
+        "delete": "Borrar",
+        "cancel": "Cancelar",
+        "share": "Compártelo",
+        "description": "Descripción",
+        "select": "Seleccionar",
+        "copyLink": "Copiar Enlace",
+        "create": "Crear",
+        "save": "Guardar",
+        "edit": "Editar",
+        "edited": "Editado",
+        "requiredField": "Campo obligatorio",
+        "yes": "confirmar"
+    },
+    "labels": {
+        "created": "Etiqueta creada",
+        "updated": "Etiqueta actualizada",
+        "deleted": "Etiqueta eliminada",
+        "labels": "Etiquetas",
+        "chooseLabels": "Elige las etiquetas",
+        "createNewLabel": "Crear nueva etiqueta",
+        "editLabel": "Editar etiqueta",
+        "chooseColor": "Elige un color"
+    },
+    "attachments": {
+        "deleted": "Adjunto eliminado",
+        "downloadAll": "Descargar todo",
+        "addFile": "Añadir fichero",
+        "confirmDelete": "¿Esta seguro de eliminar el archivo:"
+    },
+    "activities": {
+        "updated": "Mensaje actualizado",
+        "deleted": "Mensaje eliminado",
+        "created": "Mensaje creado",
+        "filesize": "El tamaño del archivo no puede superar 1MB",
+        "filerepeat": "Este fichero ya ha sido subido"
+    }
+}

@@ -1,0 +1,16 @@
+@use 'src/sass/palette' as *
+.colors-container
+    margin: 20px 0
+    .colors-change
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+    .input-color
+        background-color: transparent
+        margin: 20px 10px 20px 0
+        padding: unset
+    .input-color::-webkit-color-swatch
+        border-radius: 100%
+        border: 1px solid $dark-color
+        width: 40px
+        height: 40px

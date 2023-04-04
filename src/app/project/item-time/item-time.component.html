@@ -1,0 +1,18 @@
+<div class="time-header">
+    <mat-icon>watch_later</mat-icon>
+    <p>{{'time.itemTimes' | translate}}</p>
+</div>
+<div class="task-times">
+    <div class="estimated">
+        <h4>{{'time.estimated' | translate}}</h4>
+        <input type="number" [(ngModel)]="time!.total" (blur)="timeUpdate()" (change)="calcRemaining()" autocomplete="off" min="0" />
+    </div>
+    <div class="spent">
+        <h4>{{'time.spent' | translate}}</h4>
+        <input type="number" [(ngModel)]="time!.spent" (blur)="timeUpdate()" (change)="calcRemaining()" autocomplete="off" min="0" />
+    </div>
+    <div class="remaining">
+        <h4>{{'time.remaining' | translate}}</h4>
+        <p>{{timeRemaining}}</p>
+    </div>
+</div>

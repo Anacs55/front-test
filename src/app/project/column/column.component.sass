@@ -1,0 +1,59 @@
+@use 'src/sass/palette' as *
+
+.column
+    display: flex
+    box-sizing: border-box
+    flex-direction: column
+    border-radius: 16px
+    background-color: $white
+    border: 1px solid $medium-color
+    padding: 5px
+    box-shadow: 0 0 5px $medium-color
+    .column-header
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        padding: 5px 10px
+        .title
+            max-width: 100%
+            h2
+                color: $title-color
+                font-family: 'Noto Sans'
+                font-style: normal
+                font-weight: 400
+                font-size: 15px
+                line-height: 25px
+            input
+                background-color: transparent
+                max-width: 100%
+                font-size: 15px
+        .hide
+            display: none
+            cursor: default
+        mat-icon
+            color: $text-color
+    .itemList
+        min-height: 40px
+        overflow-y: auto
+        display: flex
+        flex-direction: column
+        padding: inherit
+        height: -webkit-fill-available
+        gap: 5px
+
+.cdk-drop-list-dragging .itemList
+    min-height: 0
+
+.cdk-drag-preview
+    box-sizing: border-box
+    background-color: $light-color
+    border-radius: 20px
+    padding-bottom: 0px
+    box-shadow: 0px 0px 12px -3px $medium-color
+
+.cdk-drag-placeholder
+    opacity: 0
+
+.cdk-drag-animating, .itemList.cdk-drop-list-dragging .item:not(.cdk-drag-placeholder)
+    transition: transform 150ms cubic-bezier(0, 0, 0.2, 1)

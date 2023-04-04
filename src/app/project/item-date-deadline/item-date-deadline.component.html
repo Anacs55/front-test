@@ -1,0 +1,4 @@
+<div *ngIf="deadline" class="deadline" [ngStyle]="{'background-color': backgroundColor}">
+    <mat-icon>calendar_today</mat-icon>
+    <p >{{ deadline | date: 'dd MMM'}}</p>
+</div>

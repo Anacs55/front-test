@@ -1,0 +1,32 @@
+<div class="attachment">
+    <div class="preview">
+        <ng-container *ngIf="isImage; then image; else file"></ng-container>
+    </div>
+    <div>
+        <p *ngIf="!activeForm" [title]="" (click)="previewFile()">{{attachment.name}}</p>
+        <input [class.hide]="!activeForm" #nameInput [(ngModel)]="attachment.name" (blur)="openForm(nameInput, false)"
+            (keydown.enter)="changeName(nameInput)" />
+    </div>
+    <div class="buttons" *ngIf="attachment.id !== 'loading'">
+        <mat-icon *ngIf="attachment.auditory.createdBy==user.id" (click)="openForm(nameInput, true)">
+            edit
+        </mat-icon>
+        <a [href]="downloadPath" [download]="attachment.name">
+            <mat-icon>download</mat-icon>
+        </a>
+        <button *ngIf="attachment.auditory.createdBy==user.id" (click)="deleteFile()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+
+</div>
+
+<ng-template #image>
+    <img *ngIf="isImage" [src]="filePath" (click)="previewFile()" class="imgPreview">
+</ng-template>
+
+<ng-template #file>
+    <button class="filePreview" (click)="previewFile()">
+        <mat-icon>picture_as_pdf</mat-icon>
+    </button>
+</ng-template>

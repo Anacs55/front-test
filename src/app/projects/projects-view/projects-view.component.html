@@ -1,0 +1,23 @@
+<section class="flex dash-view">
+    <div class="dash-container">
+        <div class="header flex ai-center">
+            <h1>{{'dashView.projects' | translate}}</h1>
+        </div>
+        <div class="projects">
+            <div class="add-project flex flex-column ai-center jc-center">
+                <button class="flex ai-center jc-center" (click)="createProject()">
+                    <mat-icon>add_circle</mat-icon>
+                    <p>{{'dashView.newProject' | translate}}</p>
+                </button>
+                <input (change)="importTrello($event)" id="trello-upload" type="file" />
+                <label for="trello-upload" class="flex ai-center jc-center">
+                    <mat-icon>file_upload</mat-icon>
+                    <p>{{'dashView.importTrello' | translate}}</p>
+                </label>
+            </div>
+            <project-card *ngFor="let project of projects" (onDelete)="deleteProject($event)" [project]="project"
+                class="project"></project-card>
+        </div>
+       
+    </div>
+</section>

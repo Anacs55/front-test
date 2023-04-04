@@ -1,0 +1,21 @@
+<div class="colors-container">
+    <h2>{{'modals.createProject.colorSelect' | translate}}</h2>
+    <div class="">
+
+        <div class="colors">
+            <button *ngFor="let color of colorsValue" (click)="selectColor(color)"
+                [ngStyle]="{'background-color': color}" [ngClass]="{'selected': standardColor === color}"
+                class="color"></button>
+        </div>
+        <p> {{'modals.createProject.othersColors' | translate}}</p>
+        <form [formGroup]="form">
+            <div class="flex ai-center jc-center">
+                <input (change)="updateColors()" formControlName="color" class="input-color" type="color" 
+                    value="#ffffff">
+                <!-- <datalist id="rainbow">
+                    <option *ngFor="let color of colorsValue" [value]="color"></option>
+                </datalist> -->
+            </div>
+        </form>
+    </div>
+</div>

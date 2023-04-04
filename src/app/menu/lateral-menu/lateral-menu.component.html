@@ -1,0 +1,43 @@
+<mat-drawer-container class="lateral-menu" autosize hasBackdrop *ngIf="!isMobile">
+    <mat-drawer-content>
+        <nav class="menu" #menu>
+            <div class="logo">
+                <img (click)="toggleMenu()" src="../../../assets/img/logo-beetask.png" alt="logo BeeTask">
+                <span [@openClose]="visible ? 'open' : 'closed'" routerLink="/project">BeeTask</span>
+            </div>
+            <div class="buttons">
+                <button *ngFor="let menu of menus" [routerLink]="menu.path"
+                    [matTooltip]="!visible ? (menu.name | translate) : undefined" matTooltipPosition="right"
+                    class="btn-menu">
+                    <mat-icon>{{menu.icon}}</mat-icon>
+                    <span [@openClose]="visible ? 'open' : 'closed'">{{menu.name | translate}}</span>
+                </button>
+            </div>
+        </nav>
+        <div [style.width.px]="contentWidth" #content>
+            <ng-container *ngTemplateOutlet="contenido"></ng-container>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<div class="mobile-content" *ngIf="isMobile">
+    <div class="content">
+        <ng-container *ngTemplateOutlet="contenido"></ng-container>
+    </div>
+    <div class="bottom-menu">
+        <button *ngFor="let menu of menus" [routerLink]="menu.path"
+            [matTooltip]="!visible ? (menu.name | translate) : undefined" matTooltipPosition="right" class="btn-menu">
+            <mat-icon>{{menu.icon}}</mat-icon>
+        </button>
+        <button (click)="openDialogEditUser()" class="btn-menu">
+            <mat-icon>settings</mat-icon>
+        </button>
+        <button (click)="logout()" class="btn-menu">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+</div>
+
+<ng-template #contenido>
+    <ng-content></ng-content>
+</ng-template>

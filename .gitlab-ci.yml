@@ -1,0 +1,36 @@
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  CI_REGISTRY_URL: "${CI_REGISTRY_IMAGE}:develop"
+  CI_REGISTRY_URL_RELEASE: "${CI_REGISTRY_IMAGE}:main"
+
+stages:
+  - build
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+default:
+  before_script:
+    - echo "$CI_BUILD_TOKEN" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+
+
+build:
+  stage: build
+  script:
+    - docker build --pull --cache-from $CI_REGISTRY_URL -t $CI_REGISTRY_URL .
+    - docker push $CI_REGISTRY_URL
+  only:
+    - develop
+
+build release:
+  stage: build
+  script:
+    - docker build --build-arg prod=true --pull --cache-from $CI_REGISTRY_URL_RELEASE -t $CI_REGISTRY_URL_RELEASE .
+    - docker push $CI_REGISTRY_URL_RELEASE
+  only:
+    - main

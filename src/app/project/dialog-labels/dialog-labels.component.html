@@ -1,0 +1,39 @@
+<section class="dialog-box">
+    <div class="dialog-menu">
+        <h2>{{'labels.labels' | translate}}</h2>
+        <button (click)="close()">
+            <mat-icon class="close-icon">add_circle</mat-icon>
+        </button>
+    </div>
+    <div class="dialog-content">
+        <div class="column-1">
+            <p>{{'labels.chooseLabels' | translate}}</p>
+            <div *ngFor="let label of labels" class="labels">
+                <mat-checkbox [checked]="checkSelectedLabel(label)" (change)="clickLabel($event, label)" />
+                <input [value]="label.name" disabled [ngStyle]="{'background-color': label.color}" class="label" />
+                <button (click)="changeTag(label)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="column-2">
+            <p *ngIf="!editTag">{{'labels.createNewLabel' | translate}}</p>
+            <p *ngIf="editTag">{{'labels.editLabel' | translate}}</p>
+            <mat-form-field appearance="outline">
+                <input [formControl]="tagName" type="text" matInput>
+            </mat-form-field>
+            <p *ngIf="editTag">{{'labels.chooseColor' | translate}}</p>
+            <div class="colors">
+                <button *ngFor="let color of colors" (click)="selectColor(color)"
+                    [ngStyle]="{'background-color': color}" [ngClass]="{'selected': tagColor === color}"
+                    class="color"></button>
+            </div>
+            <button *ngIf="!editTag" (click)="createLabel()" class="btn-primary"> {{'common.create' | translate}}</button>
+            <div *ngIf="editTag" class="btn-action">
+                <button (click)="updateLabel()" class="btn-primary"> {{'common.save' | translate}}</button>
+                <button (click)="deleteLabel()" class="btn-primary"> {{'common.delete' | translate}}</button>
+                <button (click)="resetForm() " class="btn-secondary"> {{'common.cancel' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</section>

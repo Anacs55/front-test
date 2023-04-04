@@ -1,0 +1,37 @@
+<section class="modal-assign">
+    <h1>{{'modals.assignToTeam.assignToTeam' | translate}}</h1>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>{{'modals.assignToTeam.searchTeam' | translate}}</mat-label>
+            <mat-chip-grid #chipList aria-label="team selection">
+              <mat-chip-row
+                *ngFor="let team of teams"
+                (removed)="remove(team)">
+                {{team.name}}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+              <input
+                placeholder="team..."
+                #teamInput
+                [formControl]="teamCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)"/>
+            </mat-chip-grid>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+              <mat-option *ngFor="let team of filteredTeams | async" [value]="team">
+                {{team.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+   
+    
+    <div class="modal-buttons flex ai-center jc-flex-end" mat-dialog-actions>
+        <button class="btn-secondary " cdkFocusInitial mat-dialog-close >{{'common.cancel' | translate}}</button>
+        <button class="btn-primary">{{'task.assign' | translate}}</button>
+    </div>
+</section>

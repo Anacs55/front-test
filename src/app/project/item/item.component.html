@@ -1,0 +1,38 @@
+<div class="component" (contextmenu)="openContextMenu($event)" (click)="goToItem(item)">
+    <tags *ngIf="fistVisible && item.tags?.length !== 0" [ids]="item.tags"/>
+    <div class="item">
+        <span *ngIf="!activeForm">{{item.name}}</span>
+        <input #itemNameInput type="text" [class.hide]="!activeForm" [(ngModel)]="item.name"
+            (keydown.enter)="changeItemName(itemNameInput, item)" (blur)="openForm(itemNameInput)" disabled />
+    </div>
+    <div class="percentageContainer" *ngIf="fistVisible && progress != 0">
+        <div class="percentage" [style.width.%]="progress" [ngStyle]="{'background-color': backgroundColor}"></div>
+    </div>
+    <div *ngIf="fistVisible" class="card-icons">
+        <div class="icons">
+            <priority-selector [priority]="item.priority" (onChange)="changePriority($event)"
+                (click)="clickPriority($event)" />
+            <item-date-deadline [deadline]="item.date?.end" [class.hide]="!item.date?.end" />
+            <item-tiny-global-time [item]="item" />
+        </div>
+        <div>
+            <show-assigned-bees [addedUsers]="addedUsers" [item]="item" />
+        </div>
+    </div>
+    <contextmenu *ngIf="fistVisible" #contextMenu>
+        <button (click)="openForm(itemNameInput)" mat-menu-item>
+            <mat-icon>edit</mat-icon>
+            <span>{{'common.rename' | translate}}</span>
+        </button>
+        <!--
+        <button mat-menu-item (click)="shareLink()">
+            <mat-icon>share</mat-icon>
+            <span>{{'common.share' | translate}}</span>
+        </button>
+        -->
+        <button (click)="itemDelete(item)" mat-menu-item>
+            <mat-icon>delete</mat-icon>
+            <span>{{'common.delete' | translate}}</span>
+        </button>
+    </contextmenu>
+</div>

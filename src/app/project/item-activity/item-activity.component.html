@@ -1,0 +1,43 @@
+<div *ngIf="activity.type=='createdItem'" class="activity-box">
+    <image-acronim [text]="fullname + ' ' + fullname" class="single-user" />
+    <div>
+        <p>{{fullname}} creó esta tarea en la columna: {{activity.data.columnName}}</p>
+        <p class="small-text">{{activity.auditory.createdAt | localDatePipe}}</p>
+    </div>
+</div>
+<div *ngIf="activity.type=='addedUser'" class="activity-box">
+    <image-acronim [text]="fullname + ' ' + fullname" class="single-user" />
+    <div>
+        <p>{{fullname}} ha añadido a {{activity.data.addedUser}}</p>
+        <p class="small-text">{{activity.auditory.createdAt | localDatePipe}}</p>
+    </div>
+</div>
+<div *ngIf="activity.type=='removedUser'" class="activity-box">
+    <image-acronim [text]="fullname + ' ' + fullname" class="single-user" />
+    <div>
+        <p>{{fullname}} eliminó a {{activity.data.removedUser}} de esta tarea.</p>
+        <p class="small-text">{{activity.auditory.createdAt | localDatePipe}}</p>
+    </div>
+</div>
+<div *ngIf="activity.type=='movedItem'" class="activity-box">
+    <image-acronim [text]="fullname + ' ' + fullname" class="single-user" />
+    <div>
+        <p>{{fullname}} cambió esta tarea de la columna: {{activity.data.previousColumn}} a
+            {{activity.data.newColumn}} </p>
+        <p class="small-text">{{activity.auditory.createdAt | localDatePipe}}</p>
+    </div>
+</div>
+<div *ngIf="activity.type=='updatedTitle'" class="activity-box">
+    <image-acronim [text]="fullname + ' ' + fullname" class="single-user" />
+    <div>
+        <p>{{fullname}} cambió el título de esta tarea a: {{activity.data.newTitle}} </p>
+        <p class="small-text">{{activity.auditory.createdAt | localDatePipe}}</p>
+    </div>
+</div>
+<div *ngIf="activity.type=='updatedDescription'" class="activity-box">
+    <image-acronim [text]="fullname + ' ' + fullname" class="single-user" />
+    <div>
+        <p>{{fullname}} cambió la descripción de esta tarea a: {{activity.data.newDescription}} </p>
+        <p class="small-text">{{activity.auditory.createdAt | localDatePipe}}</p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<a [routerLink]="'/project/' + project.id">
+    <div [style]="dashStyles" class="color-div">
+        <img *ngIf="project.image" [src]="'/api/image/' + project.image">
+    </div>
+</a>
+<div class="project">
+    <div class="info">
+        <input #nameInput [(ngModel)]="name" onclick="this.select()" (blur)="changeName(nameInput)"
+            (keydown.enter)="changeName(nameInput)" />
+        <mat-icon (click)="openContextMenu($event)">
+            more_vert
+            <contextmenu #contextMenu>
+                <button mat-menu-item (click)="openForm(nameInput)">
+                    <mat-icon>edit</mat-icon>
+                    <span>{{'common.rename' | translate}}</span>
+                </button>
+                <!-- <button mat-menu-item (click)="assignToTeam()">
+                    <mat-icon>assignment_ind</mat-icon>
+                    <span>{{'task.assign' | translate}} </span>
+                </button> -->
+                <!-- <button mat-menu-item (click)="shareLink()">
+                    <mat-icon>share</mat-icon>
+                    <span>{{'common.share' | translate}}</span>
+                </button> -->
+                <button mat-menu-item (click)="delete()">
+                    <mat-icon>delete</mat-icon>
+                    <span>{{'common.delete' | translate}}</span>
+                </button>
+            </contextmenu>
+        </mat-icon>
+    </div>
+
+</div>

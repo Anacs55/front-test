@@ -1,0 +1,13 @@
+<div class="input">
+    <app-item-input-message [item]="item" [user]="user" />
+    <button (click)="switchViewmode()" >
+        <mat-icon *ngIf="showActivity == false">visibility_off</mat-icon>
+        <mat-icon *ngIf="showActivity == true">visibility_on</mat-icon>
+    </button>
+</div>
+<ng-container *ngFor="let activity of activities">
+    <app-item-message *ngIf="activity.type == 'message'" [message]="activity" (deleteMessage)="deleteMessage($event)" />
+    <ng-container *ngIf="showActivity && activity.type != 'message'">
+        <app-item-activity [activity]="activity" />
+    </ng-container>
+</ng-container>

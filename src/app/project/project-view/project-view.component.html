@@ -1,0 +1,12 @@
+<p class="project-title">{{project?.name}}</p>
+<div [style.height.px]="maxColumnHeight" [disable]="disabledScroll" (cdkDropListDropped)="dropColumn($event)"
+    [cdkDropListAutoScrollStep]="dragSpeed" mouseDragScroll cdkScrollable cdkDropList
+    cdkDropListOrientation="horizontal" class="columns-container">
+    <column [maxHeight]="maxColumnHeight" [style.max-height.px]="maxColumnHeight - 10" cdkDrag class="columns" #column
+        (mousedown)="disableScroll()" *ngFor="let column of project?.columns" [projectId]="project!.id"
+        [column]="column" [columnIds]="columnIds" (deleteColumn)="columnDelete($event)" (updateColumns)="updateColumnsChanges($event)"
+        (columnChange)="columnChange($event)" (cdkDragEnded)="swapScroll()" [cdkDragStartDelay]="dragDelay" />
+    <div class="column-creator">
+        <inline-creator (newItem)="columnCreate($event)" [placeholder]="'column.create' | translate" />
+    </div>
+</div>

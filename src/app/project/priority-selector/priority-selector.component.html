@@ -1,0 +1,9 @@
+<button [matMenuTriggerFor]="priorityMenu" mat-icon-button>
+    <mat-icon [style.color]="priorityColor">flag</mat-icon>
+</button>
+<mat-menu #priorityMenu="matMenu">
+    <button *ngFor="let priority of itemPriorities" (click)="changePriority(priority)" mat-menu-item>
+        <mat-icon [style.color]="priority.color">flag</mat-icon>
+        {{ 'priority.' + priority.value | translate }}
+    </button>
+</mat-menu>

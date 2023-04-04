@@ -1,0 +1,50 @@
+<section class="register">
+    <div class="logo flex flex-column ai-center">
+        <bee-logo-icon></bee-logo-icon>
+        <h1>BeeTask</h1>
+    </div>
+
+    <div class="form-box">
+        <form [formGroup]="form" class="flex flex-column ai-center jc-center">
+            <mat-form-field *ngIf="showEmail" appearance="outline">
+                <mat-error *ngIf="form.errors?.email">{{'register.enterValidEmail' | translate}}</mat-error>
+                <mat-label>{{'register.email' | translate}}</mat-label>
+                <input matInput formControlName="email" autocomplete="email" type="email" #email required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{'register.name' | translate}}</mat-label>
+                <input matInput formControlName="name" autocomplete="cc-given-name" type="text" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{'register.lastname' | translate}}</mat-label>
+                <input matInput formControlName="lastname" autocomplete="family-name" type="text" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{'register.password' | translate}}</mat-label>
+                <input matInput formControlName="pass" autocomplete="new-password" type="password" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{'register.confirmPassword' | translate}}</mat-label>
+                <input matInput formControlName="passCheck" autocomplete="new-password" type="password" required>
+            </mat-form-field>
+
+
+            <div *ngIf="showMailing" class="gdpr flex ai-center">
+                <br>
+                <input formControlName="mailing" type="checkbox" name="gdpr" id="gdpr">
+                <label for="gdpr">{{'register.offers' | translate}}</label>
+            </div>
+
+            <br>
+            <p>{{'register.privacy' | translate}}</p>
+
+            <button (click)="register()" [disabled]="!form.valid && !passError" class="btn-primary">{{'register.createAccount' | translate}}</button>
+        </form>
+        <p> {{'register.AlreadyHaveAccount' | translate}} <a routerLink="/login"> {{'register.login' | translate}} </a></p>
+    </div>
+
+</section>

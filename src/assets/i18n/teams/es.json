@@ -1,0 +1,62 @@
+{
+    "modals": {
+        "assignProjectToTeam": {
+            "whichProjects": "¿Qué proyectos quiere asignar a este team?",
+            "searchProjects": "Buscar proyectos"
+        },
+        "createTeam": {
+            "team": "Equipo",
+            "editTeam": "Modifica el Team",
+            "newTeam": "Nuevo Team",
+            "teamName": "Nombre del Team",
+            "projects": "Proyectos",
+            "members": "Miembros",
+            "namePlaceholder": "Escribe el nombre de tu team",
+            "descriptionPlaceholder": "Describe tu Team",
+            "updated": "actualizado correctamente",
+            "created": "creado correctamente"
+        },
+        "inviteMembers": {
+            "whoInvite": "¿A quién quieres invitar?",
+            "invite": "Invitar",
+            "addNew": "Añadir miembro",
+            "successInvitation": "La invitación ha sido enviada correctamente",
+            "inviteResentDone": "Invitacion reenviada correctamente",
+            "inviteResentError": "Error reenviando la invitación",
+            "inviteDeleteDone": "Invitacion eliminada",
+            "inviteDeleteError": "Error eliminando la invitacion"
+        },
+        "deleteMember": {
+            "deleteMember": "¿Estás seguro de que quieres borrar este miembro?",
+            "deleteInvited": "¿Estás seguro de que quieres borrar esta invitación?",
+            "deleteDone": "Miembro eliminado correctamente",
+            "deleteError": "Error eliminando al miembro"
+        },
+        "logoutMobile":{
+            "logout": "Are you sure you want to logout?"
+        }
+    },
+    "team": {
+        "create": "Crear Team",
+        "createNewTeam": "Crear nuevo Team",
+        "assign": "Asignar",
+        "enterEmail": "Escribir Email",
+        "email": "Email",
+        "inviteMember": "Invitar miembros",
+        "resendInviteMember": "Reenviar invitación",
+        "member": "Miembros del equipo",
+        "invited": "Miembros invitados",
+        "joinedTeam": "Has entrado al equipo."
+    },
+    "common": {
+        "rename": "Renombrar",
+        "delete": "Borrar",
+        "cancel": "Cancelar",
+        "share": "Compártelo",
+        "description": "Descripción",
+        "select": "Seleccionar",
+        "copyLink": "copiar enlace",
+        "save": "Guardar",
+        "yes": "Si, borrar"
+    }
+}

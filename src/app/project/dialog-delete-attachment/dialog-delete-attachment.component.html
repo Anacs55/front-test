@@ -1,0 +1,8 @@
+<section class="modal">
+    <mat-icon>delete</mat-icon>
+    <h2>{{'attachments.confirmDelete' | translate}} {{attachment.name}} ?</h2>
+    <div class="modal-buttons" mat-dialog-actions>
+        <button class="btn-secondary " cdkFocusInitial mat-dialog-close>{{'common.cancel' | translate}}</button>
+        <button (click)="close()" class="btn-alert">{{'common.yes' | translate}}</button>
+    </div>
+</section>

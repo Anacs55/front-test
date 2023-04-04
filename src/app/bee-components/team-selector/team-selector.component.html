@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline">
+    <mat-label>Team</mat-label>
+    <mat-select [(value)]="selectedTeam" [compareWith]="compareTeams">
+        <mat-option *ngFor="let team of teams" [value]="team">{{team.name}}</mat-option>
+    </mat-select>
+</mat-form-field>

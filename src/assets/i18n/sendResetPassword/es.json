@@ -1,0 +1,11 @@
+{
+    "reset":{
+        "forgotPassword": "¿Has olvidado tu contraseña?",
+        "enterValidEmail": "Introduce la dirección de correo electrónico asociada a tu cuenta ",
+        "email": "Email",
+        "sendInstruction": "Enviar instrucción de reinicio",
+        "emailSended": "Si el correo electrónico coincide con una cuenta, se enviará un correo electrónico con instrucciones de restablecimiento.",
+        "unexpectedError": "Se ha producido un error inesperado, por favor, inténtalo más tarde.",
+        "backLogin": "Volver al Login"
+    }
+} 

@@ -1,0 +1,16 @@
+{
+    "register": {
+        "email": "Email",
+        "name": "Name",
+        "lastname": "Last Name",
+        "password": "password",
+        "confirmPassword": "Confirm Password",
+        "login": "Login",
+        "enterValidEmail": "Enter valid email",
+        "offers": "I would like to receive news and offers from beeTask",
+        "privacy": "By registering, I agree to the Terms of Service and Privacy Policy.",
+        "createAccount": "Create Account",
+        "AlreadyHaveAccount?": "Already have an account?",
+        "joinedTeam": "You have joined the team"
+    }
+}

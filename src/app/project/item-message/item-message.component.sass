@@ -1,0 +1,66 @@
+@use 'src/sass/palette' as *
+:host
+    margin-top: 10px
+    display: flex
+    min-height: 40px
+    max-height: 95%
+    overflow-y: auto
+    display: flex
+    flex-direction: column
+    .single-user
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $medium-color
+        color: $cta
+        font-size: 14px
+        font-weight: 500
+        border-radius: 8px
+        padding: 3px
+        min-width: 25px
+        max-height: 25px
+        margin-right: 5px
+        width: fit-content
+    .message-box
+        background: $white
+        border: 1px solid $medium-color
+        box-shadow: $form-shadow
+        border-radius: 15px
+        padding: 5px 10px
+        top: 0
+        &:hover .edit
+            display: flex
+            margin-left: auto
+            flex-direction: row
+            align-items: center
+            justify-content: center
+            button
+                padding: 0
+                margin-left: 10px
+    .message-container
+        display: flex
+        align-items: flex-start
+.edit
+    display: none
+.dates
+    display: flex
+    flex-direction: row
+.editEnabled
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    textarea
+        width: 100%
+.user
+    display: flex
+    flex-direction: row
+    padding-bottom: 5px
+p
+    color: $text-color!important
+    font-size: 14px!important
+.strong
+    font-weight: 600
+.small-text
+    font-size: 12px!important
+    color: $dark-color!important

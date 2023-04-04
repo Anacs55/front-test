@@ -1,0 +1,124 @@
+{
+    "colorSelect": {
+        "addColors": "Add colors",
+        "deleteColor": "Delete second color",
+        "addColor": "Add color"
+    },
+    "column": {
+        "create": "Create new Column",
+        "config": {
+            "showTimes": "Show times",
+            "changeColor": "Change color"
+        }
+    },
+    "dashView": {
+        "projects": "Projects",
+        "newProject": "New project",
+        "importTrello": "Import from Trello"
+    },
+    "modals": {
+        "assignToTeam": {
+            "assignToTeam": "Assign to team",
+            "searchTeam": "Search a team"
+        },
+        "createProject": {
+            "newProject": "New Project",
+            "projectName": "Name of the Project",
+            "dateRange": "Date range",
+            "styleProject": "Style your project",
+            "label": "Label",
+            "addImage": "Add Image",
+            "image": "Image",
+            "createProject": "Create Project",
+            "colorSelect": "Select color",
+            "othersColors": "Customise your color",
+            "updateProject": "Project updated",
+            "createSuccsess": "Project created successfully",
+            "createError": "Error creating project",
+            "importSuccess": "Project imported successfully"
+        },
+        "usersItem": {
+            "AssignToUser": "Assign to User",
+            "addUsers": "Add Users",
+            "updateUsers": "Update Users"
+        },
+        "share": {
+            "shareItem": "Share Item",
+            "shareSubItem": "Share SubItem",
+            "shareproject": "Share Project"
+        }
+    },
+    "time": {
+        "delayed": "Delayed",
+        "days": "Days",
+        "daysLeft": "Days left",
+        "times": "Total Time",
+        "itemTimes": "Tiempo de la tarea",
+        "total": "Total",
+        "estimated": "Estimated",
+        "spent": "Spent",
+        "remaining": "Remaining"
+    },
+    "task": {
+        "task": "Task",
+        "create": "Add Task",
+        "assigned": "Assigned bees",
+        "assign": "Assign",
+        "complete": "Mark to complete",
+        "date": "Date",
+        "activity": "Activity",
+        "message": "Write a message",
+        "attachment": "Attachments",
+        "saved": "saved correctly",
+        "titleUpdated": "Task title updated"
+    },
+    "subTask": {
+        "create": "Add subTask",
+        "subtasks": "Subtasks"
+    },
+    "priority": {
+        "updated": "Item priority changed",
+        "unset": "Unset",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+    },
+    "common": {
+        "rename": "Rename",
+        "delete": "Delete",
+        "cancel": "Cancel",
+        "share": "Share",
+        "description": "Description",
+        "select": "Select",
+        "copyLink": "Copy Link",
+        "create": "Create",
+        "save": "Save",
+        "edit": "Edit",
+        "edited": "Edited",
+        "requiredField": "Required field",
+        "yes": "yes"
+    },
+    "labels": {
+        "created": "Label created",
+        "updated": "Label updated",
+        "deleted": "Label deleted",
+        "labels": "Labels",
+        "chooseLabels": "Choose labels",
+        "createNewLabel": "Create new label",
+        "editLabel": "Edit label",
+        "chooseColor": "Choose a color"
+    },
+    "attachments": {
+        "deleted": "Attachment deleted",
+        "downloadAll": "Download all",
+        "addFile": "Upload file",
+        "confirmDelete": "Are you sure you want to delete the attachment:"
+    },
+    "activities": {
+        "updated": "Activity updated",
+        "deleted": "Activity deleted",
+        "created": "Activity created",
+        "filesize": "File size cannot be bigger than 1MB",
+        "filerepeat": "This file has already been uploaded"
+    }
+}

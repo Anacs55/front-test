@@ -1,0 +1,29 @@
+<div class="header">
+    <mat-icon>attach_file</mat-icon>
+    <h3>{{'task.attachment' | translate}}</h3>
+    <input #input id="file" type="file" (change)="addAttachment($event)" />
+    <label for="file" class="label">
+        <mat-icon>add_circle</mat-icon>
+        {{'attachments.addFile' | translate}}
+    </label>
+</div>
+<div class="head">
+    <!--
+    <button (click)="downloadAll()" class="color">
+        <mat-icon>visibility_off</mat-icon>
+        {{'attachments.downloadAll' | translate}}
+    </button>
+    <div class="button">
+        <button (click)="switchViewMode()" class="color">
+            <mat-icon>view_module</mat-icon>
+        </button>
+        <button (click)="switchViewMode()" class="color">
+            <mat-icon>list</mat-icon>
+        </button>
+    </div>
+    -->
+</div>
+<div class="attachments">
+    <item-attachment *ngFor="let attachment of attachments" [attachment]="attachment" [projectId]="projectId"
+        [itemId]="item.id" (onDelete)="removeFile(attachment)"></item-attachment>
+</div>

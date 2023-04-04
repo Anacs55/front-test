@@ -1,0 +1,82 @@
+@use 'src/sass/palette' as *
+.dialog-box
+    padding: 30px
+    background: $bg-app
+    min-width: fit-content
+    mat-icon
+        color: $dark-color
+    .dialog-menu
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .close-icon
+            rotate: 45deg
+            color: $cta
+    .dialog-content
+        margin-top: 20px
+        display: flex
+        flex-wrap: wrap
+        .column-1
+            margin-bottom: 40px
+        .labels
+            display: flex
+            align-items: center
+            gap: 10px
+            .label
+                padding: 5px
+                width: 150px
+                border-radius: 5px
+                color: $white
+        .column-2
+            padding: 0 20px
+            .colors
+                display: grid
+                grid-template-columns: repeat(6, 50px)
+                gap: 5px
+                padding: 10px 0
+                margin-bottom: 20px
+            .color
+                width: 60px
+                height: 30px
+                border-radius: 5px
+                border: 1px solid $medium-color
+                width: 50px
+                &.selected
+                    border: 2px solid black
+                    box-shadow: 0px 0px 12px -3px $medium-color
+            .btn-action
+                display: flex
+                align-items: center
+                gap: 10px
+@media (min-width: 280px)
+    .dialog-menu
+        max-width: 250px
+    .dialog-content
+        flex-wrap: wrap
+        .column-2, .column-1
+            width: 100%
+@media (max-width: 400px)
+    .dialog-content
+        .column-2
+            .colors
+                grid-template-columns: repeat(3, 50px) !important
+
+@media (min-width: 768px) 
+    .dialog-box
+        min-width: 500px
+        .dialog-menu
+            max-width: none
+        .dialog-content
+            flex-wrap: nowrap
+            .column-1
+                width: 40%
+                min-width: 200px
+                margin-bottom: 0
+                max-height: 500px
+                overflow-y: auto
+            .column-2
+                width: 60%
+                max-width: 400px
+                border-left: 2px solid $medium-color
+
+    

@@ -1,0 +1,88 @@
+<div class="menu-close">
+    <div class="title">
+        <priority-selector [priority]="item.priority" (onChange)="changePriority($event)" />
+        <div>
+            <h1 *ngIf="!activeForm" (click)="openItemNameForm(itemNameInput)">{{item.name}}</h1>
+            <input #itemNameInput type="text" [class.hide]="!activeForm" [(ngModel)]="item.name"
+                (keydown.enter)="changeItemName(itemNameInput)" (keydown.escape)="undoItemName()" (blur)="openItemNameForm(itemNameInput)" disabled />
+            <!-- <input  #itemNameInput [(ngModel)]="item.name" type="text" onclick="this.select()"> -->
+            <!--
+         <div class="breadcrumb">
+            <p>Proyecto</p>
+            <p>></p>
+            <p>Columna</p>
+        </div> -->
+        </div>
+    </div>
+
+    <button (click)="saveAndClose()">
+        <mat-icon>add_circle</mat-icon>
+    </button>
+
+</div>
+<div class="menu-time">
+    <!-- <div>
+        <mat-checkbox [checked]="item.completed" (change)="setCompleted($event)">{{'task.complete' | translate}}</mat-checkbox>
+    </div> -->
+    <div class="flex ai-center label-box">
+        <!-- <div class="tags"> 
+            <span *ngFor="let label of labels" class="tag">{{label}}</span>
+        </div> -->
+        <tags [ids]="item.tags" #tags></tags>
+        <button (click)="labelsDialog()" class="add-labels">
+            <mat-icon>add_circle</mat-icon><span> {{'labels.labels' | translate}}</span>
+        </button>
+
+    </div>
+
+    <item-global-time [item]="item" [class.hide]="!activeTimes" #globalItemTime />
+    <div class="buttons">
+        <!-- <button (click)="shareLink()">
+            <mat-icon>share</mat-icon>
+        </button> -->
+        <button (click)="openContextMenu($event)">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <contextmenu #contextMenu>
+            <button mat-menu-item (click)="openItemNameForm(itemNameInput)">
+                <mat-icon>edit</mat-icon>
+                <span>{{'common.rename' | translate}}</span>
+            </button>
+            <button mat-menu-item (click)="itemDelete(item)">
+                <mat-icon>delete</mat-icon>
+                <span>{{'common.delete' | translate}}</span>
+            </button>
+        </contextmenu>
+    </div>
+</div>
+
+<div class="item-dialog">
+    <div class="column-left">
+        <div class="description-header">
+            <mat-icon>description</mat-icon>
+            <h3>{{'common.description' | translate}}</h3>
+        </div>
+        <textarea [(ngModel)]="item.description" (ngModelChange)="updateItemDescription()" matInput cdkTextareaAutosize
+            autocomplete="off" (blur)="save()"></textarea>
+        <item-subitems [item]="item" (updateSubTaskTime)="subTaskTimeUpdate()" />
+        <attachments #attachments [item]="item" [projectId]="projectId" />
+
+        <h3>{{'task.activity' | translate}}</h3>
+        <activities [item]="item" #activities />
+    </div>
+    <div class="column-right">
+        <div>
+            <div class="users-header">
+                <h3>{{'task.assigned' | translate}}</h3>
+            </div>
+            <div class="users-container">
+                <show-assigned-bees [addedUsers]="addedUsers" [item]="item" />
+                <button (click)="itemUsersDialog()">
+                    <mat-icon>person_add</mat-icon>
+                </button>
+            </div>
+        </div>
+        <item-time [time]="item.time" (change)="timeUpdate(item.time!)" (updateTime)="timeSave()" />
+        <item-date [date]="item.date" (updateDate)="dateUpdate($event)" />
+    </div>
+</div>

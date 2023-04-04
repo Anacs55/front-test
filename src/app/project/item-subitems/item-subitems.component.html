@@ -1,0 +1,67 @@
+<div class="subtasks-header">
+    <mat-icon>playlist_add</mat-icon>
+    <h3>{{'subTask.subtasks' | translate}}</h3>
+</div>
+<div>
+    <mat-expansion-panel *ngFor="let subItem of item?.subtasks" [expanded]="false" class="subtask-item">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="mat-panel-title">
+                <div class="title">
+                    <priority-selector *ngIf="!subItem.completed" [priority]="subItem.priority" (click)="clickPriority($event)"
+                        (onChange)="changePriority(subItem, $event)" />
+                    <div *ngIf="subItem.completed" class="task-complete-circle"></div>
+                    <input #subtaskNameInput [(ngModel)]="subItem.name" (keydown)="onKeydownInput($event)" />
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" [style.width.%]="progress(subItem.time)"
+                        [ngStyle]="{'background-color': backgroundColor}">
+                        {{progress(subItem.time) + '%'}}
+                    </div>
+                </div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="panel-inside">
+            <div class="btns-manage-task">
+                <div class="subtask-titles">
+                    <mat-checkbox [(ngModel)]="subItem.completed" />
+                    <span>{{'task.complete' | translate}}</span>
+                </div>
+                
+
+                <div class="users-container">
+                    <show-assigned-bees [addedUsers]="addedUsers" [item]="item" />
+                    <button (click)="itemUsersDialog()">
+                        <mat-icon>person_add</mat-icon>
+                    </button>
+                </div>
+
+                <div class="menu-btn-subtask">
+                    <!-- <button (click)="shareLink()" class="btn-icon">
+                        <mat-icon>share</mat-icon>
+                    </button> -->
+                    <button class="btn-icon">
+                        <mat-icon (click)="openContextMenu($event)">more_vert</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="description-header">
+                <mat-icon>description</mat-icon>
+                <h3>{{'common.description' | translate}}</h3>
+            </div>
+            <textarea [(ngModel)]="subItem.description" (ngModelChange)="updateDescription(subItem)" matInput cdkTextareaAutosize
+                autocomplete="off" (blur)="save()"></textarea>
+            <item-time [time]="subItem.time" (change)="timeUpdate(subItem.time, subItem)" (updateTime)="save()" />
+        </div>
+        <button (click)="subItemDelete(subItem)" class="btn-alert">
+            <mat-icon>delete</mat-icon>
+            {{'common.delete' | translate}}
+        </button>
+        <contextmenu #contextMenu>
+            <button (click)="openForm(subtaskNameInput)" mat-menu-item>
+                <mat-icon>edit</mat-icon>
+                <span>{{'common.rename' | translate}}</span>
+            </button>
+        </contextmenu>
+    </mat-expansion-panel>
+    <inline-creator (newItem)="subItemCreate($event)" placeholder="{{'subTask.create' | translate}}" />
+</div>

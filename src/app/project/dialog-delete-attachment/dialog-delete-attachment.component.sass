@@ -1,0 +1,32 @@
+@use 'src/sass/palette' as *
+
+.modal
+    padding: 30px
+    background: $bg-app
+    max-width: 450px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    mat-icon
+        color: $alert
+        font-size: 35px
+        height: 35px
+        width: 35px
+        margin-bottom: 10px
+    h2
+        margin-bottom: 20px
+        text-align: center
+    .modal-buttons
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 10px
+        margin: 10px 0
+
+@media (min-width: 280px) 
+    h2
+        font-size: 18px
+@media (min-width: 1024px) 
+    h2
+        font-size: 30px

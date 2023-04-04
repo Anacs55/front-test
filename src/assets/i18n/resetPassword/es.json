@@ -1,0 +1,11 @@
+{
+    "reset": {
+        "resetPassword": "Establece una nueva contraseña",
+        "newPassword": "Nueva contraseña",
+        "repeatNewPassword": "Repite la nueva contraseña",
+        "setNewPassword": "Establecer contraseña",
+        "passwordChanged": "Se ha reestablecido la contraseña, vuelve a inciar sesión.",
+        "unexpectedError": "Se ha producido un error inesperado, por favor, inténtalo más tarde.",
+        "backLogin": "Volver al Login"
+    }
+}

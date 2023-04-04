@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-vsliveshare.vsliveshare",
+        "angular.ng-template",
+        "johnpapa.angular2",
+        "github.copilot",
+        "christian-kohler.npm-intellisense",
+        "codeandstuff.package-json-upgrade",
+        "syler.sass-indented",
+        "jock.svg",
+        "ms-azuretools.vscode-docker",
+        "usernamehw.errorlens",
+        "meganrogge.template-string-converter"
+    ]
+}

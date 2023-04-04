@@ -1,0 +1,33 @@
+<section class="modal-add-project">
+  <div class="project-select">
+    <h2>{{'modals.assignProjectToTeam.whichProjects' | translate}}</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>{{'modals.assignProjectToTeam.searchProjects' | translate}}</mat-label>
+      <mat-chip-grid #chipList aria-label="Project selection">
+        <mat-chip-row *ngFor="let project of projects" (removed)="remove(project)">
+          {{project.name}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+        <input 
+          placeholder="Project..." 
+          #projectInput [formControl]="projectCtrl" 
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList" 
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-grid>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let project of filteredProjects | async" [value]="project">
+          {{project.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+  <div class="modal-buttons flex ai-center jc-flex-end" mat-dialog-actions>
+    <button class="btn-secondary " cdkFocusInitial mat-dialog-close>{{'common.cancel' | translate}}</button>
+    <button class="btn-primary">{{'team.assign' | translate}}</button>
+  </div>
+</section>

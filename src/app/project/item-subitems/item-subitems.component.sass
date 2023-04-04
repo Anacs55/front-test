@@ -1,0 +1,122 @@
+@use 'src/sass/palette' as *
+
+.subtasks-header
+    display: flex
+    flex-direction: row
+    column-gap: 10px
+    color: $dark-color
+    h3
+        margin: 0
+        font-size: 18px
+
+.subtask-item
+    background: $white
+    border: 1px solid $medium-color
+    box-shadow: $form-shadow
+    border-radius: 15px
+    color: $text-color
+    font-size: 14px
+    margin: 10px 0
+    padding: 10px 0
+    .mat-panel-title
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        .title
+            display: flex
+            align-items: center
+            gap: 10px
+            width: 60%
+            input
+                width: 100%
+        .task-complete-circle
+            width: 15px
+            height: 15px
+            border-radius: 50%
+            background: $dark-green
+        
+        .progress
+            display: flex
+            overflow: hidden
+            font-size: .75rem
+            background-color: #E9ECEF
+            border-radius: 10px
+            width: 35%
+            height: 15px
+            border: 1px solid #ccc
+            .progress-bar
+                color: $white
+                text-align: center
+                transition: width .6s ease
+                display: flex
+                justify-content: center
+                align-items: center
+    .panel-inside
+        display: flex
+        flex-direction: column
+        gap: 12px
+        .description-header
+            display: flex
+            flex-direction: row
+            column-gap: 10px
+            color: $dark-color
+            h3
+                margin: 0
+                font-size: 16px
+        textarea
+            margin: 0 0 16px
+            padding: 8px
+            background: $light-color
+            border: 1px solid $medium-color
+            border-radius: 15px
+            text-align: justify
+        .description
+            ::ng-deep
+                .mat-form-field-underline
+                    display: none
+        .users-container
+            display: flex
+            align-items: center
+            mat-icon 
+                color: $dark-color    
+    .subtask-titles
+        display: flex
+        align-items: center
+        gap: 10px
+        span
+            font-size: 1rem
+            font-family: "Noto Sans", sans-serif
+            color: $dark-color
+    mat-icon
+            margin-right: 10px
+            color: $dark-color
+    .btns-manage-task
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-top: 10px
+        gap: 20px
+        .btn-icon
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: $medium-color
+            border-radius: 8px
+            padding: 2px
+            mat-icon
+                color: $cta
+                margin-right: 0px
+        .menu-btn-subtask
+            display: flex
+            align-items: center
+            gap: 10px
+.btn-alert
+    float: right
+    mat-icon
+        color: $white
+
+.mat-expansion-panel-header
+    height: auto
+
+.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]), .mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]), .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true])
+    background: $white

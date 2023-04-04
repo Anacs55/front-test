@@ -1,0 +1,38 @@
+<div class="column" [style.background-color]="column.color" [style.max-height.px]="maxHeight - 20">
+    <div class="column-header" (contextmenu)="openContextMenu($event, true)">
+        <div class="title">
+            <h2 *ngIf="!activeForm">{{column.name}}</h2>
+            <input #columnNameInput type="text" [class.hide]="!activeForm" [(ngModel)]="column.name"
+                (keydown.enter)="columnNameChange(columnNameInput)" (blur)="openForm(columnNameInput, false)" />
+        </div>
+        <mat-icon #columnContextRef (click)="openContextMenu($event)">
+            more_vert
+            <contextmenu #contextMenu>
+                <button mat-menu-item (click)="openForm(columnNameInput, true)">
+                    <mat-icon>edit</mat-icon>
+                    <span>{{'common.rename' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="showTimes()">
+                    <mat-icon>{{column.config?.showTimes ? 'toggle_off' : 'toggle_on'}}</mat-icon>
+                    <span>{{'column.config.showTimes' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="columnChangeColor()">
+                    <mat-icon>color_lens</mat-icon>
+                    <span>{{'column.config.changeColor' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="columnDelete(column!)">
+                    <mat-icon>delete</mat-icon>
+                    <span>{{'common.delete' | translate}}</span>
+                </button>
+            </contextmenu>
+        </mat-icon>
+    </div>
+    <column-time #columnTime *ngIf="column.config?.showTimes" [items]="column.items" />
+    <div cdkDropList [id]="column.id" [cdkDropListData]="column.items!" [cdkDropListConnectedTo]="columnIds"
+        (cdkDropListDropped)="drop($event)" [cdkDropListAutoScrollStep]="dragSpeed" class="itemList">
+        <item cdkDrag *ngFor="let item of column.items; trackBy: itemTrackBy" [item]="item" [columnId]="column.id"
+            [projectId]="projectId" class="item" (updateItem)="updateItem()" (deleteItem)="deleteItem($event)"
+            [cdkDragStartDelay]="dragDelay" />
+    </div>
+    <inline-creator (newItem)="itemCreate(column!, $event)" [placeholder]="'task.create' | translate" />
+</div>

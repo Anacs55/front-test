@@ -1,0 +1,25 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '@angular/material/theming'
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core()
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$primary-palette: (50: #e3e3f7, 100: #bab9eb, 200: #8c8ade, 300: #5e5bd1, 400: #3c38c7, 500: #1915bd, 600: #1612b7, 700: #120fae, 800: #0e0ca6, 900: #080698, A100: #c5c4ff, A200: #9291ff, A400: #605eff, A700: #4745ff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #ffffff, 400: #ffffff, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #ffffff, A700: #ffffff))
+$primary-primary: mat-palette($primary-palette)
+$primary-accent: mat-palette($mat-pink, A200, A100, A400)
+$primary-warn: mat-palette($mat-red)
+$primary-theme: mat-light-theme(( color: ( primary: $primary-primary, accent: $primary-accent, warn: $primary-warn, )))
+@include angular-material-theme($primary-theme)
+
+// $light-palette: (50: #e1fdff, 100: #b4faff, 200: #82f7ff, 300: #50f3fe, 400: #2bf1fe, 500: #05eefe, 600: #04ecfe, 700: #04e9fe, 800: #03e7fe, 900: #01e2fd, A100: #ffffff, A200: #f1fdff, A400: #bef7ff, A700: #a4f4ff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #000000, 900: #000000, A100: #000000, A200: #000000, A400: #000000, A700: #000000))
+// $light-primary: mat-palette($primary-palette)
+// $light-accent: mat-palette($mat-pink, A200, A100, A400)
+// $light-warn: mat-palette($mat-red)
+// $light-theme: mat-light-theme(( color: ( primary: $light-primary, accent: $light-accent, warn: $light-warn, )))
+
+// .light-theme
+//     @include angular-material-theme($light-theme)

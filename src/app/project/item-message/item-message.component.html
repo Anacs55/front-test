@@ -1,0 +1,32 @@
+<div class="user">
+    <image-acronim [text]="member?.name + ' ' + member?.lastname" class="single-user" />
+    <p>{{member?.name}} {{member?.lastname}}</p>
+</div>
+<div class="message-box">
+    <div class="message-container" *ngIf="!editMode">
+        <p class="strong">{{message.data.text}}</p>
+        <div class="edit" *ngIf="user?.id == member?.id">
+            <button (click)="swapMode()" class="small-text">
+                {{'common.edit' | translate}}
+            </button>
+            <button (click)="delete()" class="small-text">
+                {{'common.delete' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="editEnabled" *ngIf="editMode">
+        <textarea [value]="message.data.text" cols="15" rows="2" #texto></textarea>
+        <div class="edit">
+            <button (click)="saveEditMessage(texto.value)" class="small-text"> {{'common.save' | translate}}</button>
+            <button (click)="swapMode()" class="small-text">
+                {{'common.cancel' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="dates">
+        <p class="small-text">{{message.auditory.createdAt | localDatePipe}}</p>
+        <p class="small-text" *ngIf="message.auditory.updatedAt">&nbsp;|
+            <span [title]="message.auditory.updatedAt | localDatePipe">({{'common.edited' | translate}})</span>
+        </p>
+    </div>
+</div>

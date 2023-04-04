@@ -1,0 +1,141 @@
+@use 'palette' as *
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+html  
+    box-sizing: border-box 
+    font-family: 'Noto Sans', sans-serif
+    -ms-text-size-ajust: 100% 
+    -moz-text-size-ajust: 100% 
+    -webkit-text-size-ajust: 100% 
+    font-size: 16px 
+    border: 0 
+
+body 
+    overflow-x: hidden 
+   
+
+*, *::before, *::after  
+    box-sizing: inherit 
+    margin: 0 
+    padding: 0 
+   
+a 
+    text-decoration: none 
+    color: $cta
+    font-family: 'Noto Sans', sans-serif
+a:hover 
+    color: $cta-hover
+ 
+/* Estilo Títulos */
+h1, h2, h3, h4
+    color: $title-color
+    font-weight: 500
+    font-family: 'Noto Sans', sans-serif
+h1 
+    font-size: 30px 
+    
+    
+ 
+h2 
+    font-size: 28px 
+    font-size: 1.75rem 
+ 
+h3 
+    font-size: 24px 
+    font-size: 1.5rem 
+ 
+h4 
+    font-size: 20px 
+    font-size: 1.25rem 
+ 
+h5, a, abbr, b, code, dfn, em, i, li, mark, p, pre, strong 
+    font-size: 16px 
+    font-size: 1rem 
+    font-family: 'Noto Sans', sans-serif
+ 
+
+/* Estilos etiquetas y listas */
+abbr, dfn, em, i 
+    font-style: italic 
+ 
+
+b, strong 
+    font-weight: bold 
+
+ul
+    list-style: none
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary  
+    display: block 
+ 
+
+hr 
+    margin: 16px auto 
+    margin: 1rem auto 
+    width: 100% 
+    border: 1px solid $cta
+    background-color: $cta
+ 
+
+/* Media */
+img, audio, video, iframe, canvas, svg, picture  
+    max-width: 100% 
+    width: 100% 
+    height: auto 
+ 
+
+/* formularios */
+input, outgroup, option, select, textarea  
+    padding: 4px 
+    padding: .25rem 
+    font-family: inherit 
+    font-size: 16px 
+    font-size: 1rem 
+    border: none 
+    outline: none 
+    height: auto
+ 
+
+textarea 
+    resize: none 
+ 
+
+button, input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"], label, select, a  
+    cursor: pointer 
+ 
+
+*[disabled] 
+    cursor: default 
+    color: #999 
+    background-color: #ddd 
+ 
+
+::-moz-selection  
+    color: $white
+    background-color: $cta
+ 
+::selection  
+    color: $white 
+    background-color: $cta 
+
+/* Scrollbar */
+::-webkit-scrollbar
+    background: $white
+    padding: 0 0 2px 0
+    width: 8px
+    height: 8px
+::-webkit-scrollbar-track
+    box-shadow: inset 0 0 5px $dark-color
+    border-radius: 16px
+::-webkit-scrollbar-thumb
+    border-radius: 16px
+    background: $dark-color
+    box-shadow: 0 0 5px $medium-color
+    &:hover
+        background: $text-color
+
+/* hidden arrows input type number*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    margin: 0

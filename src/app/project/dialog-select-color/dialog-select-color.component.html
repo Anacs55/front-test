@@ -1,0 +1,5 @@
+<select-column-color (color)="setColor($event)" />
+<div class="modal-buttons">
+    <button (click)="dialogRef.close()" class="btn-secondary " cdkFocusInitial>{{'common.cancel' | translate}}</button>
+    <button  (click)="selectColor()" class="btn-primary">{{'common.select' | translate}}</button>
+</div>

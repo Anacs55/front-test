@@ -1,0 +1,36 @@
+<div *ngIf="!isMobile" class="menu-box">
+    <nav class="menu">
+        <team-selector [teams]="teams" [(selectedTeam)]="selectedTeam"/>
+
+        <div class="icons">
+            <!--
+            <button (click)="openDialogLabels()">
+                <mat-icon>label</mat-icon>
+                {{'labels.labels' | translate}}
+            </button>
+            -->
+            <!-- <search-project></search-project>  TO DO: Revisar-->
+            <!-- <button mat-icon-button>
+                <mat-icon>notifications_active</mat-icon>
+            </button> -->
+            <button mat-icon-button [matMenuTriggerFor]="userConfig" class="user">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+
+            <button mat-icon-button (click)="openNotifications()" class = "user">
+                <mat-icon>notifications_active</mat-icon>
+            </button>
+        </div>
+    </nav>
+
+    <mat-menu #userConfig="matMenu">
+        <button mat-menu-item (click)="openDialog()">
+            <mat-icon>settings</mat-icon>
+            <span>{{'mainMenu.settings' | translate}}</span>
+        </button>
+        <button (click)="logout()" mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>{{'mainMenu.logout' | translate}}</span>
+        </button>
+    </mat-menu>
+</div>

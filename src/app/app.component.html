@@ -1,0 +1,14 @@
+<ng-template [ngIf]="user === undefined" [ngIfElse]="logged">
+    <router-outlet />
+</ng-template>
+
+<ng-template #logged>
+    <div class="mainView">
+        <lateral-menu>
+            <div>
+                <app-menu #menu [user]="user"></app-menu>
+                <router-outlet />
+            </div>
+        </lateral-menu>
+    </div>
+</ng-template>

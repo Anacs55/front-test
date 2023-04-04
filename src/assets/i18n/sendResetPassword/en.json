@@ -1,0 +1,11 @@
+{
+    "reset":{
+        "forgotPassword": "Forgot your password?",
+        "enterValidEmail": "Enter the email address associated with your account ",
+        "email": "Email",
+        "sendInstruction": "Send reset instruction",
+        "emailSended": "If the email match with an account, an email will sended with reset instructions.",
+        "unexpectedError": "Unexpected error ocurred, please, try again later.",
+        "backLogin": "Back to Login"
+    }
+}

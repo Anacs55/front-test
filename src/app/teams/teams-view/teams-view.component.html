@@ -1,0 +1,110 @@
+<section class="team-view">
+    <div class="team-menu ">
+        <div class="team-select">
+            <h1>{{team.name}}</h1>
+            <button class="edit-team" (click)="editTeam()">
+                <bee-edit-icon></bee-edit-icon>
+            </button>
+        </div>
+        <bee-add-new-button (click)="addNewTeam()" text="{{'team.createNewTeam' | translate}}"></bee-add-new-button>
+    </div>
+    <!-- <div class="team-description">
+        <div class="col-7">
+            <h2>Description</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco la boris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <div class="col-5">
+            <h2>Assigned Projects</h2>
+            <div class="project">beeTask</div>
+        </div>
+       
+    </div> -->
+    <h3 class="hide-desk"> {{'team.member' | translate}} </h3>
+
+    <div class="team-members">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    {{'team.member' | translate}}
+                </div>
+                <div class="cell">
+                    {{'team.email' | translate}}
+                </div>
+                <div class="cell"></div>
+            </div>
+
+            <div class="row member-row" *ngFor="let member of team?.members">
+                <div class="cell" data-title="{{'team.member' | translate}}">
+                    <div class=" person-cell">
+                        <div class="person-name">
+                            <mat-icon>person</mat-icon>{{member.user.name}}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cell" data-title="Email">
+                    {{member.user.email}}
+                </div>
+                <div class="cell">
+                    <div>
+                        <mat-icon (click)="openDeleteMemberContextMenu($event, member)" class="float-right">more_vert
+                        </mat-icon>
+                    </div>
+                    <contextmenu #memberContextMenu>
+                        <button mat-menu-item (click)="deleteMember()">
+                            <mat-icon>delete</mat-icon>
+                            <span>{{'common.delete' | translate}}</span>
+                        </button>
+                    </contextmenu>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3> {{'team.invited' | translate}} </h3>
+        <div class="hide-desk invite-mobile">
+            <bee-add-new-button (click)="inviteMember()" [text]="'team.inviteMember' | translate"></bee-add-new-button>
+        </div>
+    </div>
+
+    <div class="team-members">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    {{'team.email' | translate}}
+                </div>
+                <div class="cell">
+                    <div class="float-right">
+                        <bee-add-new-button (click)="inviteMember()" [text]="'team.inviteMember' | translate"></bee-add-new-button>
+                    </div>
+                </div>
+            </div>
+            <div class="row member-row" *ngFor="let member of team?.invites">
+                <div class="cell" data-title="{{'team.member' | translate}}">
+                    <div class="  person-cell">
+                        <div class="cell width-70" data-title="Email">
+                            {{member.email}}
+                        </div>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="float-right">
+                        <mat-icon (click)="openInvitedMemberContextMenu($event, member)">more_vert</mat-icon>
+                    </div>
+                    <contextmenu #inviteContextMenu>
+                        <button mat-menu-item (click)="resendInviteMember()">
+                            <mat-icon>send</mat-icon>
+                            <span>{{'team.resendInviteMember' | translate}}</span>
+                        </button>
+                            <button mat-menu-item (click)="deleteInvitedMember()">
+                            <mat-icon>delete</mat-icon>
+                            <span>{{'common.delete' | translate}}</span>
+                        </button>
+                    </contextmenu>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

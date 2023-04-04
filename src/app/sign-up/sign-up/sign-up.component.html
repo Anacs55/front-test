@@ -1,0 +1,26 @@
+<section class="sign-up">
+    <div class="logo flex flex-column ai-center">
+        <bee-logo-icon></bee-logo-icon>
+        <h1>BeeTask</h1>
+    </div>
+    <div class="sign-up-text">
+        <p>{{'signUp.signUpText' | translate}}</p>
+    </div>
+    <div class="form-box">
+        <h2>{{'signUp.register' | translate}}</h2>
+        <auth-providers authType="register"></auth-providers>
+        <form [formGroup]="form" class="flex flex-column">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'signUp.email' | translate}}</mat-label>
+                <input matInput formControlName="email" type="email" required>
+            </mat-form-field>
+            <div class="gdpr flex ai-center">
+                <input formControlName="mailing" type="checkbox" name="gdpr" id="gdpr">
+                <label for="gdpr">{{'signUp.offers' | translate}}</label>
+            </div>
+            <span>{{'signUp.privacy' | translate}}</span>
+            <button (click)="goToRegister()" class="btn-primary">{{'signUp.createAccount' | translate}}</button>
+        </form>
+        <p> {{'signUp.AlreadyHaveAccount' | translate}} <a routerLink="/login"> {{'signUp.login' | translate}} </a></p>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+@use 'src/sass/palette' as *
+@use 'src/sass/menu' as *
+
+:host
+    width: calc(100% - $lateralMenu)
+    .dash-view
+        background-color: $bg-app
+        .dash-container
+            .header
+                margin: 30px 0 0 20px
+            .projects
+                display: flex
+                flex-wrap: wrap
+                width: 100%
+                margin: 10px auto
+                .add-project
+                    width: 275px
+                    height: 200px
+                    margin: 20px
+                    border-radius: 15px
+                    background-color: $medium-color
+                    button, label
+                        color: $cta
+                        user-select: none
+                        border-radius: 15px
+                    input
+                        display: none
+@media screen and (max-width: 768px)
+.projects
+    justify-content: center
+.header
+    margin: 0px

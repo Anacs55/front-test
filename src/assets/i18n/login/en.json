@@ -1,0 +1,14 @@
+{
+    "login": {
+        "email": "Email",
+        "password": "password",
+        "login": "Login",
+        "noAccount": "No account? ",
+        "signUp": "Sign up",
+        "forgotPassword": "Forgot your password? ",
+        "reset": "Reset it"
+    },
+    "error": {
+        "invalidCredentials": "Invalid credentials"
+    }
+}

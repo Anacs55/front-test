@@ -1,0 +1,15 @@
+<div class="edit-user-box">
+    <div class="head">
+        <h1 mat-dialog-title>{{'modalEditProfile.editProfile' | translate}}</h1>
+        <mat-icon (click)="dialogRef.close()" mat-dialog-close class="btn-secondary">
+            add_circle
+        </mat-icon>
+    </div>
+    <img src="../../assets/img/PersonCircle.svg" alt="user foto" class="image" />
+    <div mat-dialog-content class="change-data-box">
+        <input type="text" id="name" [(ngModel)]="name" [placeholder]="'modalEditProfile.name' | translate" />
+        <input type="text" id="lastname" [(ngModel)]="lastName" [placeholder]="'modalEditProfile.lastname' | translate" />
+        <p><a routerLink="/resetPassword">{{'modalEditProfile.changePassword' | translate}}</a></p>
+    </div>
+    <button class="btn-primary" (click)="updateProfile()">{{'modalEditProfile.updateProfile' | translate}}</button>
+</div>

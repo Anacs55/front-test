@@ -1,0 +1,38 @@
+<section class="modal-new-team">
+    <h1 *ngIf="team">{{'modals.createTeam.editTeam' | translate}}</h1>
+    <h1 *ngIf="!team">{{'modals.createTeam.newTeam' | translate}}</h1>
+    <div class="modal-column">
+        <div class="">
+            <form [formGroup]="form">
+                <p>{{'modals.createTeam.teamName' | translate}}</p>
+                <mat-form-field appearance="outline" class="name-input">
+                    <input formControlName="name" type="text" autocomplete="off"
+                        placeholder="{{'modals.createTeam.namePlaceholder' | translate}}" matInput>
+                </mat-form-field>
+                <!-- <p>{{'common.description' | translate}}</p>
+                <mat-form-field appearance="outline" class="text-input">
+                    <textarea placeholder="{{'modals.createTeam.descriptionPlaceholder' | translate}}" matInput></textarea>
+                </mat-form-field> -->
+            </form>
+        </div>
+        <!-- <div class="col-4">
+            <div class="add-member">
+                <p>{{'modals.createTeam.members' | translate}}</p>
+                <div class="add-icon" (click)="inviteMember()">
+                    <bee-add-member-icon></bee-add-member-icon>
+                </div>
+            </div>
+            <div class="add-project">
+                <p>{{'modals.createTeam.projects' | translate}}</p>
+                <div class="add-icon" (click)="addProject()">
+                    <bee-add-project-icon></bee-add-project-icon>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="modal-buttons flex ai-center jc-flex-end" mat-dialog-actions>
+        <button mat-dialog-close class="btn-secondary" cdkFocusInitial >{{'common.cancel' | translate}}</button>
+        <button *ngIf="team" (click)="createTeam()" class="btn-primary">{{'common.save' | translate}}</button>
+        <button *ngIf="!team" (click)="createTeam()" class="btn-primary">{{'team.create' | translate}}</button>
+    </div>
+</section>

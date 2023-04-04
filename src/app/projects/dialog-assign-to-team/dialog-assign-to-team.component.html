@@ -1,0 +1,8 @@
+<section class="modal-assign">
+    <h2>{{'modals.assignToTeam.assignToTeam' | translate}}</h2>
+    <team-selector [teams]="teams" [(selectedTeam)]="selectedTeam"></team-selector>
+    <div class="modal-buttons" mat-dialog-actions>
+        <button class="btn-secondary " cdkFocusInitial mat-dialog-close >{{'common.cancel' | translate}}</button>
+        <button class="btn-primary">{{'task.assign' | translate}}</button>
+    </div>
+</section>

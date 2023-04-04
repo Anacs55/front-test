@@ -1,0 +1,32 @@
+@use 'src/sass/palette' as *
+.sign-up
+    text-align: center
+    .logo
+        padding-top: 40px
+        h1
+            font-weight: 700
+            color: $cta
+    .sign-up-text
+        padding: 20px 0 0 0
+.form-box
+    margin: 20px auto 0
+    h2
+        margin-bottom: 10px
+    form, auth-providers
+        margin: auto
+        padding: 10px
+        border-radius: 8px
+        max-width: 330px
+        display: flex
+        flex-direction: column
+        align-items: center
+        mat-form-field
+            width: 100%
+        .gdpr, span
+            font-size: 12px
+        .gdpr
+            margin: 0 0 20px 0
+            input
+                margin-right: 10px
+        button
+            width: 100%

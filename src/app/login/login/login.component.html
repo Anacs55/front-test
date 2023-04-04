@@ -1,0 +1,22 @@
+<div class="logo flex flex-column ai-center">
+    <bee-logo-icon />
+    <h1>BeeTask</h1>
+</div>
+
+<div class="login">
+    <p *ngIf="error" class="error">{{"error." + error | translate}}</p>
+    <auth-providers authType="login" />
+    <form [formGroup]="loginForm">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'login.email' | translate}}</mat-label>
+            <input matInput formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'login.password' | translate}}</mat-label>
+            <input matInput formControlName="pass" type="password" required>
+        </mat-form-field>
+        <button [disabled]="loginForm.invalid" (click)="login()" class="btn-primary">Login</button>
+    </form>
+    <p>{{'login.noAccount' | translate}}<a routerLink="/signUp">{{'login.signUp' | translate}}</a></p>
+    <p><a routerLink="/resetPassword">{{'login.forgotPassword' | translate}} </a></p>
+</div>

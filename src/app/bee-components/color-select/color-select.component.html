@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+    <div class="colors-container">
+        <p> {{'colorSelect.addColors' | translate}}</p>
+        <div class="colors-change ">
+            <div class="colors-change">
+                <input (change)="updateColors()" formControlName="color" type="color" class="input-color">
+                <div *ngIf="this.secondColor" class="flex ai-center jc-center">
+                    <input (change)="updateColors()" formControlName="color2" type="color" class="input-color">
+                </div>
+                <button *ngIf="this.secondColor" (click)="deleteSecondColor()" class="btn-secondary">
+                    <mat-icon> invert_colors_off</mat-icon>
+                    {{'colorSelect.deleteColor' | translate}}
+                </button>
+                <button *ngIf="!this.secondColor" (click)="addSecondColor()" class="btn-secondary">
+                    <mat-icon>invert_colors</mat-icon>
+                    {{'colorSelect.addColor' | translate}}
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>

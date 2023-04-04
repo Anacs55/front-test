@@ -1,0 +1,12 @@
+{
+    "signUp": {
+        "signUpText": "Con BeeTask podrás tener un control completo de tus proyectos",
+        "register": "Regístrate, es gratis",
+        "email": "Email",
+        "offers": "Deseo recibir noticias y ofertas de beeTask",
+        "privacy": "Al registrarme, acepto las Condiciones del servicio y la Política de privacidad",
+        "createAccount": "Crear Cuenta",
+        "AlreadyHaveAccount": "¿Ya tienes una cuenta?",
+        "login": "Login"
+    }
+} 

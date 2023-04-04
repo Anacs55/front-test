@@ -1,0 +1,22 @@
+<div class="date-header">
+    <h3>{{'task.date' | translate}}</h3>
+</div>
+<div>
+    <mat-form-field class="date-input" appearance="outline">
+        <mat-date-range-input [rangePicker]="picker">
+            <input (dateChange)="update()" matStartDate [(ngModel)]="dates!.start" />
+            <input (dateChange)="update()" matEndDate [(ngModel)]="dates!.end" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker" />
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <div class="remaining">
+        <p [class.hide]="!activeDate" (click)="deleteDate()" [ngStyle]="{'background-color': backgroundColor}">
+            <span *ngIf="remaining < 0">
+                {{ 'time.delayed' | translate }}
+            </span>
+            {{remaining}}
+            <span [translate]="remaining < 0 ? 'time.days' : 'time.daysLeft'"></span>
+        </p>
+    </div>
+</div>

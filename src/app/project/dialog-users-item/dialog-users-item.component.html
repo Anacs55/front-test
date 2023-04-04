@@ -1,0 +1,14 @@
+<div class="user-box">
+    <h1>{{'modals.usersItem.addUsers' | translate}}</h1>
+    <div class="users-checkbox">
+        <mat-checkbox *ngFor="let user of data.allUsers" (change)="selectUser($event, user)" [checked]="user.selected"
+            labelPosition="before" color="primary">
+            {{user.name}} {{user.lastname}}
+        </mat-checkbox>
+    </div>
+
+    <div class="modal-buttons" mat-dialog-actions>
+        <button (click)="dialogRef.close()" class="btn-secondary " cdkFocusInitial>{{'common.cancel' | translate}}</button>
+        <button (click)="addUsers()" class="btn-primary">{{'modals.usersItem.updateUsers' | translate}}</button>
+    </div>
+</div>

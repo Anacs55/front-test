@@ -1,0 +1,113 @@
+@use 'palette' as *
+
+.mat-form-field-appearance-outline
+    .mat-mdc-text-field-wrapper, .mdc-text-field--outlined, mat-form-field
+        border: 1px solid $medium-color
+        transition: border .2s ease-in
+        background: $white
+        box-shadow: $form-shadow
+        border-radius: 16px
+        // min-height: 60px
+        max-height: 50px
+        top:0
+        &.mdc-text-field--invalid
+            border: 1px solid $alert
+        .mdc-floating-label
+            background-color: white
+        .mat-mdc-form-field-infix
+            padding: 8px 0 16px !important
+            border-top: 0.3em solid transparent
+        .mdc-notched-outline__leading, .mdc-notched-outline__notch, .mdc-notched-outline__trailing
+            border: none !important
+        .mat-mdc-form-field-outline-thick
+            &.mat-mdc-focused .mat-mdc-form-field-outline-thick
+                .mat-mdc-form-field-outline-start, .mat-mdc-form-field-outline-end,.mat-mdc-form-field-outline-gap
+                    box-shadow: $form-shadow
+                    transform: border
+.mat-mdc-select-min-line.ng-star-inserted
+    color: $cta
+    font-weight: 600
+.cdk-overlay-container
+    .cdk-overlay-pane
+        .mat-mdc-menu-content
+            padding: 0 !important
+            .mat-mdc-menu-item > *
+                color: $cta
+        .mat-mdc-select-panel, .mat-mdc-menu-panel
+            border-radius: 16px !important
+            padding: 0
+        .mat-mdc-option.mat-mdc-option-active, .mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled)
+            background-color: $light-color
+        .mat-mdc-menu-item:hover:not([disabled])
+            background: $medium-color
+
+.mat-mdc-select-arrow-wrapper
+    .mat-mdc-select-arrow
+        width: 24px
+.mat-date-range-input-container
+    display: flex
+    align-items: center
+.mdc-icon-button.mat-mdc-icon-button
+    width: 40px
+    display: flex
+    padding: unset
+    justify-content: center
+
+.mat-mdc-form-field-icon-suffix.ng-star-inserted
+    top: -3px
+    position: relative
+
+.mat-mdc-dialog-container
+    background-color: $bg-app
+    padding: 0
+
+.mat-mdc-menu-item
+    margin: 0
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-wrapper
+    padding-bottom: 10px
+.mat-mdc-option
+    color: $dark-color
+    font-family: 'Noto Sans', sans-serif
+.mat-mdc-option.mat-mdc-active, .mat-mdc-select-panel .mat-mdc-option.mat-mdc-selected:not(.mat-mdc-option-multiple)
+    color: $cta-hover
+    background: $light-color
+.mat-mdc-option:hover:not(.mat-mdc-option-disabled), .mat-mdc-option:focus:not(.mat-mdc-option-disabled)
+    background:  $medium-color
+    color: $cta
+.mat-mdc-select, .mat-mdc-form-field-hide-placeholder .mat-mdc-select-placeholder
+    font-family: 'Noto Sans', sans-serif
+    color: $text-color
+.mat-mdc-form-field-wrapper, .mat-mdc-form-field-infix, mat-select
+    padding-bottom: 0
+    padding: 0 !important
+
+// chip component
+mat-form-field
+    .mat-mdc-chip.mat-mdc-standard-chip
+        background-color: #DADAF0
+        color: $cta
+    .mat-mdc-chip.mat-mdc-standard-chip:hover
+        background-color: #DADAF0
+        color: $cta-hover
+    .mat-mdc-chip.mat-mdc-standard-chip .mat-mdc-chip-remove
+        color: $cta
+        opacity: 1
+    .mat-mdc-chip.mat-mdc-standard-chip:hover .mat-mdc-chip-remove:hover
+        color: $cta-hover
+        opacity: 1
+
+// date
+.mat-mdc-date-range-input-container
+    margin-top: 5px
+.mat-mdc-button-wrapper
+    color: $dark-color
+.mat-mdc-menu-item
+    .mdc-list-item
+    .mat-mdc-menu-item
+        color: $dark-color !important
+// checkbox
+.mat-mdc-checkbox-checked.mat-mdc-accent .mat-mdc-checkbox-background
+    background-color: $cta
+.mat-mdc-checkbox-frame
+    color: $dark-color

@@ -1,0 +1,29 @@
+@use 'src/sass/palette' as *
+
+.modal-invite-member
+    padding: 40px
+    background: $bg-app
+   
+    h1
+        margin: 10px 0 20px 0
+        color: $cta
+    .members-forms
+        max-height: 400px
+        overflow-y: auto
+    bee-add-new-button
+        max-width: 250px
+    .project-select
+        padding: 20px 0
+        p
+            margin-bottom: 20px
+        mat-form-field
+            width: 100%
+    .modal-buttons
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        gap: 10px
+@media (min-width: 768px) 
+    .modal-invite-member
+        min-width: 800px
+        max-height: 800px

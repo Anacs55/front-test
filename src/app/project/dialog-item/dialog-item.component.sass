@@ -1,0 +1,141 @@
+@use 'src/sass/palette' as *
+
+:host
+    h1
+        font-size: 25px
+    h3
+        margin: 0
+        font-size: 18px
+    .menu-close   
+        background-color: $medium-color
+        padding: 10px 10px 10px 20px
+        width: 100%
+        display: flex
+        justify-content: space-between
+        mat-icon
+            transform: rotate(45deg)
+            color: $cta
+            margin-left: 30px
+        .title
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 10px
+            input
+                min-width: 600px
+            .hide
+                display: none
+            .breadcrumb
+                display: flex
+                align-items: center
+                gap: 10px
+                color: $text-color
+                font-weight: 600
+                font-size: 14px
+
+    .menu-time
+        background-color: $light-color
+        padding: 20px
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between 
+        gap: 10px
+        color: $text-color
+        .add-labels
+            color: $cta
+        .buttons
+            display: flex
+            align-items: center
+            gap: 10px
+            item-global-time
+                margin-right: 20px
+            button
+                background-color: $medium-color
+                color: $cta
+                border-radius: 15px
+    .item-dialog
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        column-gap: 30px
+        max-height: 80vh
+        padding: 20px
+        .column-left
+            display: flex
+            flex-direction: column
+            padding-bottom: 16px
+            .description-header
+                display: flex
+                flex-direction: row
+                column-gap: 10px
+                color: $dark-color
+            .mat-form-field
+                align-items: flex-start
+            textarea
+                margin: 4px 0 16px
+                padding: 8px
+                min-height: 67px
+                width: 100%
+                background: $white
+                border: 1px solid $medium-color
+                box-shadow: $form-shadow
+                border-radius: 15px
+                text-align: justify
+            .description
+                ::ng-deep
+                    .mat-form-field-underline
+                        display: none
+        .column-right
+            display: flex
+            flex-direction: column
+            mat-icon
+                color: $dark-color
+            
+            .users-container
+                margin-bottom: 2em
+                display: flex
+                align-items: center
+                margin-top: 20px
+                
+                h2
+                    text-align: center
+                button
+                    align-self: center
+                    
+            .hide
+                display: none
+
+    .buttons
+        position: sticky
+        display: inline-block
+        float: right
+
+    @media (min-width: 280px) 
+        .column-left, .column-right
+            width: 100%
+        .column-left
+            .mat-form-field
+                width: 83%
+        .users-header
+            margin-top: 20px
+        .menu-time
+            flex-wrap: wrap
+        .label-box
+            flex-wrap: wrap
+    @media (min-width: 768px) 
+        .menu-time
+            flex-wrap: nowrap
+    @media (min-width: 1024px) 
+        .column-left
+            width: 65%
+            .mat-form-field
+                width: 92%
+        .column-right
+            width: 30%
+        .users-header
+            margin-top: 0
+        .label-box
+            flex-wrap: nowrap
+        

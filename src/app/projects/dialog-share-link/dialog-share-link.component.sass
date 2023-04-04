@@ -1,0 +1,29 @@
+@use 'src/sass/palette' as *
+
+.modal-box
+    padding: 30px
+    background: $bg-app
+    min-width: 400px
+    h2
+        margin-bottom: 20px
+    .link-input
+        display: flex
+        align-items: center
+        justify-content: space-between
+        background: $white
+        padding: 10px
+        border: 1px solid $medium-color
+        box-shadow: 0px 4px 15px -2px rgb(117 117 149 / 25%)
+        border-radius: 15px
+        svg
+            max-width: 25px
+            cursor: pointer
+    .mat-form-field
+        width: 100%
+        margin: 20px 0
+    .modal-buttons
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        gap: 10px
+        margin-top: 20px

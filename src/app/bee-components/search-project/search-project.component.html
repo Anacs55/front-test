@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline">
+    <input type="text" matInput [matAutocomplete]="auto" [(ngModel)]='textForSearch' (change)='searchProject()' [formControl]="myControl">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let projects of filteredProjects" [value]="projects">
+            {{projects.name}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+

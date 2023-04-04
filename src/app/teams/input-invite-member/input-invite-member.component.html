@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+    <div formArrayName="form" *ngFor="let form of formArray.controls; index as index">
+        <div [formGroupName]="index" class="member-row">
+            <div class="col-7">
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'team.enterEmail' | translate}}</mat-label>
+                    <input matInput formControlName="email" placeholder="Email" (keydown.enter)="$event.preventDefault()">
+                </mat-form-field>
+            </div>
+            <!-- <div class="col-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Role</mat-label>
+                    <mat-select formControlName="role" disableRipple>
+                        <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div> -->
+            <div class="col-1">
+                <button (click)="removeMember(index)" >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<bee-add-new-button (click)="addNewMember()" text="{{'modals.inviteMembers.addNew' | translate}}"></bee-add-new-button>

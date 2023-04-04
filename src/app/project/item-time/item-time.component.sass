@@ -1,0 +1,44 @@
+@use 'src/sass/palette' as *
+.time-header
+    display: flex
+    flex-direction: row
+    column-gap: 10px
+    color: $dark-color
+    p
+        margin-bottom: 5px 
+    
+.task-times
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: 28px 
+    text-align: center
+    h4
+        margin: 0
+        font-size: 0.9em
+    input
+        width: 60%
+        border: none
+        padding: 8px 12px
+        border-radius: 5px
+        text-align: center
+        //box-shadow: inset 0 0 0 2px #dfe1e6
+    .estimated
+        width: 30%
+        input
+            background-color: #FEF9E7 
+            box-shadow: inset 0 0 0 2px #FCF3CF
+    .spent
+        width: 30%
+        input
+            background-color: #EAFAF1
+            box-shadow: inset 0 0 0 2px #D5F5E3
+    .remaining
+        width: 30%
+        p
+            margin: 0
+            background-color: #FDEDEC
+            box-shadow: inset 0 0 0 2px #FADBD8
+            padding: 6px 14px
+            text-align: center
+            border-radius: 5px

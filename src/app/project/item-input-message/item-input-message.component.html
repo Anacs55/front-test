@@ -1,0 +1,5 @@
+<div class="activity-box">
+    <image-acronim [text]="user.name+ ' ' + user.lastname" />
+    <textarea placeholder="{{ 'task.message' | translate}}" [(ngModel)]="text" class="message-box" name="" id="" cols="15" rows="2" #texto></textarea>
+    <button class="btn-secondary" (click)="sendMessage(texto.value)"> {{'common.save' | translate}}</button>
+</div>

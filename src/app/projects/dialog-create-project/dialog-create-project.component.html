@@ -1,0 +1,67 @@
+<section class="modal-new-project">
+    <h1>{{'modals.createProject.newProject' | translate}}</h1>
+    <div class="flex flex-wrap">
+        <div class="column-1">
+            <form [formGroup]="form">
+                <p>{{'modals.createProject.projectName' | translate}}</p>
+                <mat-form-field appearance="outline" class="name-input" required>
+                    <mat-error *ngIf="!form.controls.name.valid">{{'common.requiredField' | translate}}</mat-error>
+                    <input formControlName="name" type="text" autocomplete="off" placeholder="Name" matInput>
+                </mat-form-field>
+                <!-- <p>{{'common.description' | translate}}</p>
+                <mat-form-field appearance="outline" class="text-input">
+                    <textarea placeholder="Descripción del Proyecto" matInput></textarea>
+                </mat-form-field> -->
+                <p>{{'modals.createProject.dateRange' | translate}}</p>
+                <mat-form-field appearance="outline" class="text-input">
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate placeholder="Start date">
+                        <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+
+            </form>
+            <!--
+            <div class="add-member col-6">
+                <p>Assign to team</p>
+                <button class="add-icon" (click)="assignToTeam()">
+                    <bee-add-member-icon></bee-add-member-icon>
+                </button>
+            </div>
+            -->
+        </div>
+        <div class="column-2">
+            <p> {{'modals.createProject.styleProject' | translate}}</p>
+            <div class="card flex flex-column">
+                <div class="card-cover" [style]="cardPlaceHolder"></div>
+                <p>{{this.form.value.name || ('modals.createProject.projectName' | translate)}}</p>
+                <!--
+                <p class="card-label as-flex-end">{{'modals.createProject.label' | translate}}</p>
+                -->
+            </div>
+            <form [formGroup]="form">
+                <color-select (colors)="updateColors($event)"></color-select>
+                <!-- <div class="img-container flex">
+                    <div>
+                        <label for="fileInput">
+                            <p> {{'modals.createProject.addImage' | translate}}</p>
+                            <span *ngIf="!form.value.image" class="flex ai-center jc-center">
+                                <mat-icon>add_photo_alternate</mat-icon> {{'modals.createProject.image' | translate}}
+                            </span>
+                            <img *ngIf="form.value.image" [src]="form.value.image !== undefined"
+                                [src]="'/api/image/' + form.value.image">
+                        </label>
+                        <input id="fileInput" type="file" accept="image/*" (change)="postImage($event)">
+                    </div>
+                </div> -->
+            </form>
+        </div>
+    </div>
+    <div class="action-buttons flex ai-center jc-flex-end" mat-dialog-actions>
+        <button (click)="dialogRef.close()" class="btn-secondary " cdkFocusInitial>{{'common.cancel' |
+            translate}}</button>
+        <button (click)="create()" class="btn-primary">{{'modals.createProject.createProject' | translate}}</button>
+    </div>
+</section>

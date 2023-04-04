@@ -1,0 +1,68 @@
+@use 'src/sass/palette' as *
+@use 'src/sass/menu' as *
+
+:host
+    @media (max-width: 768px)
+        overflow: hidden
+    .lateral-menu
+        height: 100vh
+        .menu
+            display: flex
+            flex-direction: column
+            align-items: center
+            background-color: $bg-app
+            padding: 10px 6px 0
+            transition: width 0ms 400ms
+            //border-right: 1px solid $dark-color
+            .logo
+                display: flex
+                align-items: center
+                cursor: pointer
+                max-height: 80px
+                img
+                    width: unset
+                    max-width: unset
+                span
+                    font-family: 'Noto Sans'
+                    font-weight: 600
+                    font-size: 20px
+                    padding-left: 10px
+                    color: $cta
+            .buttons
+                margin-top: 16px
+                position: relative
+                left: -16px
+                .btn-menu
+                    margin: 4px 0
+                    gap: unset
+                    span
+                        padding-left: 10px
+    .mobile-content
+        display: flex
+        flex-direction: column
+        height: 100vh
+        overflow: hidden
+        .content
+            overflow: scroll
+            overflow-x: hidden
+        .bottom-menu
+            margin-top: auto
+            width: 100%
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            background-color: $bg-app
+            padding: 5px
+            box-sizing: border-box
+
+    mat-icon
+            color: $cta
+    mat-toolbar, mat-drawer, mat-drawer-content
+            background-color: $bg-app
+    mat-toolbar
+            height: 65px
+    mat-drawer
+            position: fixed
+    mat-drawer-content
+            overflow-x: hidden
+            display: flex

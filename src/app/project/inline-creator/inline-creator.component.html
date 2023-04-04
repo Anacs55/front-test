@@ -1,0 +1,7 @@
+<button class="component btn-add">
+  <div class="placeholder" *ngIf="!activeForm" (click)="openForm(input)">
+    <mat-icon>add_circle</mat-icon>
+    {{placeholder}}
+  </div>
+  <input class="input" (keydown)="checkCreate($event)" (blur)="openForm(input)" [placeholder]="placeholder" #input [class.hide]="!activeForm" [(ngModel)]="formValue" />
+</button>

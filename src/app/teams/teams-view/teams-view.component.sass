@@ -1,0 +1,137 @@
+@use 'src/sass/palette' as *
+@use 'src/sass/layout' as *
+@use 'src/sass/menu' as *
+
+:host
+    width: 100%
+    .team-menu 
+        margin: 20px
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        .team-select
+            display: flex
+            align-items: center
+            gap: 20px
+            .edit-team
+                background-color: $medium-color
+                padding: 10px 8px 5px 10px
+                border-radius: 12px
+    .team-description
+        margin: 20px 
+        display: flex
+        justify-content: space-between    
+        gap: 20px
+        h2
+            color: $cta
+            font-size: 20px
+            margin-bottom: 10px
+        p
+            color: $text-color
+            font-size: 14px
+        .project
+            color: $cta
+            padding: 5px 20px
+            background-color: $medium-color
+            border-radius: 12px
+            width: fit-content
+    
+.float-right
+    float: right           
+.mat-menu-content button
+    display: flex
+    align-items: center
+    color: $dark-color
+    font-family: 'Noto Sans'
+button.mat-menu-item:hover
+    color: $cta
+.mat-menu-item .mat-icon-no-color, .mat-menu-submenu-icon
+    color: $dark-color
+.mat-menu-item:hover .mat-icon-no-color, .mat-menu-submenu-icon
+    color: $cta
+.mat-menu-item:hover:not([disabled])
+    background-color: $medium-color
+.mat-elevation-z4
+    box-shadow: $task-shadow
+
+@media screen and (min-width: 768px)
+    .hide-desk
+        display: none
+@media screen and (min-width: 250px)
+    .hide-mobile
+        display: none
+    .invite-mobile
+        margin: 20px 30px
+h3
+    padding: 20px 40px 0 40px
+.team-members
+    background: $white
+    box-shadow: $form-shadow
+    border-radius: 15px
+    padding: 10px
+    margin: 20px
+    mat-icon
+        color: $dark-color
+.person-cell
+    display: flex
+    align-items: center
+    justify-content: space-between
+    
+    .person-name
+        display: flex
+        align-items: center
+        gap: 10px
+        
+.table
+  margin: 0 0 40px 0
+  width: 100%
+  display: table
+  @media screen and (max-width: 580px)
+    display: block
+.width-70
+    width: 70%
+.member-row:hover
+    background-color: $medium-color
+    border-radius: 15px
+    width: 100%
+.row
+  display: table-row
+  background: $white
+  &:nth-of-type(even)
+    background: $light-color
+  &:nth-of-type(even):hover
+    background-color: $medium-color
+    
+  &.header
+    font-weight: 600
+    color: $cta 
+   
+  @media screen and (max-width: 580px)
+    &.header
+      padding: 0
+      height: 6px 
+      .cell
+        display: none
+    .cell
+      margin-bottom: 10px  
+      &:before
+        margin-bottom: 3px
+        content: attr(data-title)
+        min-width: 98px
+        font-size: 10px
+        line-height: 10px
+        font-weight: bold
+        text-transform: uppercase
+        color: $dark-color
+        display: block
+    .hide-mobile
+        display: none
+   
+.cell
+  padding: 6px 10px
+  display: table-cell
+  @media screen and (max-width: 580px)
+    padding: 2px 10px
+    display: block
+        

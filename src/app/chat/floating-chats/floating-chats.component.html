@@ -1,0 +1,6 @@
+<button class="initChat" color="primary" mat-mini-fab>
+    <mat-icon>add</mat-icon>
+</button>
+<div class="chats">
+    <chat *ngFor="let chat of chats" [chat]="chat" (closeChat)="closeChat($event)"></chat>
+</div>

@@ -1,0 +1,11 @@
+{
+    "reset": {
+        "resetPassword": "Set a new password",
+        "newPassword": "New password",
+        "repeatNewPassword": "Repeat the new password",
+        "setNewPassword": "Set new password",
+        "passwordChanged": "Password has been reset, please do login again.",
+        "unexpectedError": "Unexpected error ocurred, please, try again later.",
+        "backLogin": "Back to Login"
+    }
+}

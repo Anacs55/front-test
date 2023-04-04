@@ -1,0 +1,9 @@
+<div class="column-times">
+    <mat-icon>watch_later</mat-icon>
+    <p class="total">{{columnTime.total}}</p>
+    <p class="spent">{{columnTime.spent}}</p>
+    <p class="remaining">{{timeRemaining}}</p>
+</div>
+<div class="progress-container">
+    <div class="progress" [style.width.%]="progressBar" [style.background-color]="backgroundColor"></div>
+</div>

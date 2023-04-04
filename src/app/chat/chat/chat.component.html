@@ -1,0 +1,21 @@
+<div class="component">
+    <div class="header">
+        <span (click)="expand()">{{chat?.user}}</span>
+        <button (click)="close()" class="close" mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div *ngIf="expanded" class="body">
+        <div class="messages">
+            <chat-message *ngFor="let msg of messages" [msg]="msg"></chat-message>
+        </div>
+        <div class="send">
+            <mat-form-field appearance="fill">
+                <input matInput type="text" [(ngModel)]="sendText" (keydown.enter)="send()" autocomplete="off">
+                <button *ngIf="sendText" matSuffix mat-icon-button aria-label="Send" (click)="send()">
+                  <mat-icon>send</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

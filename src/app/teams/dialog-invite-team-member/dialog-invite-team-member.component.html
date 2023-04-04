@@ -1,0 +1,11 @@
+<section class="modal-invite-member">
+  <h1>{{'modals.inviteMembers.whoInvite' | translate}}</h1>
+  <div class="members-forms">
+    <input-invite-member (members)="setMembersToInvite($event)"></input-invite-member>
+  </div>
+  
+  <div class="modal-buttons" mat-dialog-actions>
+    <button class="btn-secondary" cdkFocusInitial mat-dialog-close>{{'common.cancel' | translate}}</button>
+    <button (click)="sendInvites()" [disabled]="sendingInvites" class="btn-primary">{{'modals.inviteMembers.invite' | translate}}</button>
+  </div>
+</section>  

@@ -1,0 +1,33 @@
+{
+    "common": {
+        "rename": "Rename",
+        "delete": "Delete",
+        "cancel": "Cancel",
+        "share": "Share",
+        "description": "Description",
+        "select": "Select",
+        "copyLink": "Copy Link",
+        "create": "Create",
+        "edit": "Edit",
+        "add": "Add",
+        "requiredField": "Required field"
+    },
+    "modalEditProfile": {
+        "editProfile": "Edit Profile",
+        "name": "Name",
+        "lastname": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "updateProfile": " Update profile",
+        "close": "Close",
+        "changePassword": "Change your passowrd here"
+    },
+    "mainMenu": {
+        "settings": "Settings",
+        "logout": "Logout"
+    },
+    "lateralMenu": {
+        "projects": "Projects",
+        "teams": "Teams"
+    }
+}

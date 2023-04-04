@@ -1,0 +1,33 @@
+{
+    "common": {
+        "rename": "Renombrar",
+        "delete": "Borrar",
+        "cancel": "Cancelar",
+        "share": "Compártelo",
+        "description": "Descripción",
+        "select": "Elegir",
+        "copyLink": "Copiar Enlace",
+        "create": "Crear",
+        "edit": "Editar",
+        "add": "Añadir",
+        "requiredField": "Campo obligatorio"
+    },
+    "modalEditProfile": {
+        "editProfile": "Editar perfil",
+        "name": "Nombre",
+        "lastname": "Apellidos",
+        "email": "Email",
+        "password": "Contraseña",
+        "updateProfile": " Actualizar el perfil",
+        "close": "Cerrar",
+        "changePassword": "Cambia tu contraseña aqui"
+    },
+    "mainMenu": {
+        "settings": "Ajustes",
+        "logout": "Logout"
+    },
+    "lateralMenu": {
+        "projects": "Proyectos",
+        "teams": "Teams"
+    }
+}
